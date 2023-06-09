@@ -31,11 +31,11 @@
             <div class="card-body">
                 <form class="form-inline w-75 m-auto d-flex p-4">
                     <div class="form-group">
-                        <input type="text" name="" class="form-control text-center" placeholder="Your Name">
+                        <input type="text" name="" class="form-control text-center" placeholder="Your Name" id="name">
                     </div>
                     <div> <span class=" p-4 "> + </span> </div>
                     <div class="form-group">
-                        <input type="text" name="" class="form-control text-center" placeholder="Love Name">
+                        <input type="text" name="" class="form-control text-center" placeholder="Love Name" id="lname">
                     </div>
                 </form>
                 <div class="w-75 m-auto">
@@ -55,9 +55,38 @@
 
     <script>
         function checkloveper(){
-            var lovedata = Math.random() * 100;
-            lovedata = Math.floor(lovedata); 
-            document.getElementById('lovevalue').value = lovedata + "%";
+
+            var name = document.getElementById('name').value;
+            var lname = document.getElementById('lname').value;
+            
+            if(name == ""){
+                alert("Please Enter Your Name");
+            }
+            else if(name.length <=2){
+                alert("Min Length is 3");
+            }
+            else if(!isNaN(name)){
+                alert("Numbers are not allow");
+            }
+
+            else if(lname == ""){
+                alert("Please Enter Your Love_name");
+            }
+            else if(lname.length <=2){
+                alert("Min Length is 3");
+            }
+            else if(!isNaN(lname)){
+                alert("Numbers are not allow");
+            }
+            else{
+
+                var lovedata = Math.random() * 100;
+                lovedata = Math.floor(lovedata); 
+                document.getElementById('lovevalue').value = lovedata + "%";
+            }
+            
+
+            
 
         }
     </script>
